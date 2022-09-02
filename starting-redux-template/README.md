@@ -44,3 +44,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Lessons Learned
+
+Date: 9/1/2022
+Issue: 'Invalid Hook' error
+Reason: Error caused by duplicate React reference component.
+Resolution: If you use Node for package management, you can run this check in your project folder:
+
+### `npm ls react`
+
+If you see more than one React, you’ll need to figure out why this happens and fix your dependency tree. For example, maybe a library you’re using incorrectly specifies react as a dependency (rather than a peer dependency). Also run, [Yarn Resoloutions](https://classic.yarnpkg.com/en/docs/selective-version-resolutions/#toc-how-to-use-it) to specify a single library to fix the issue.
